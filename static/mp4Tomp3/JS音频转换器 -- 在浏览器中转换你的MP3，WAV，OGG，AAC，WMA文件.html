@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>JS音频转换器 -- 在浏览器中转换你的MP3，WAV，OGG，AAC，WMA文件</title>
+    
+    <meta name="viewport" content="width=device-width">
+    
+		<meta name="description" content="免费的在线音频转换工具。">
+    <meta property="og:site_name" content="JS音频转换器">
+    <meta property="og:title" content="在浏览器中转换你的音频文件格式">
+    <meta property="og:description" content="免费的JS音频转换工具">
+  
+	<link rel="stylesheet" href="./bmain.min.css">
+	</head>
+<body>
+<div id="bheader">
+	<div class="brow">
+		</a>
+		<div id="blanguage">
+					<style>
+			.langImg {
+				background-image: url(/lang/langImg.png);
+				background-repeat: no-repeat;
+				display: block;
+				float: left;
+			}
+			#languagebar img,span
+			{
+				vertical-align: middle;
+			}
+			.languagecur
+			{
+			    cursor: pointer;
+				border-color: #e2e2ea;
+				border-width: 1px;
+				border-style: solid;
+				padding: 3px;
+				border-radius: 5px;
+			}
+			#menu i { margin-right: 2px;} 
+			#menu ul { margin: 0; padding: 0; list-style: none; } 
+			#menu ul li { display: block;   position: relative;   float: left; } 
+			#menu li ul { display: none; } 
+			#menu ul li a { display: block;   text-decoration: none;   color: #ffffff;   border-top: 1px solid #ffffff;   padding: 5px 15px 5px 15px;   background: #f0f0f9;   margin-left: 1px;   white-space: nowrap; } 
+			#menu ul li a:hover { background: #e2e2ea; } 
+			#menu li:hover ul {display: block;   position: absolute; } 
+			#menu li:hover li {float: none;} 
+			#menu li:hover a {background: #b9b9b9; } 
+			#menu li:hover li a:hover { background: #e2e2ea; }
+			#menu ul li {
+			  list-style-position: inside;
+			  -webkit-column-break-inside: avoid;
+						page-break-inside: avoid;
+							 break-inside: avoid;
+							  height:30px;
+			}
+		</style>
+		
+		<div id="menu">
+			<ul>
+				<li>
+					<div class="languagecur">
+						<img style="vertical-align: middle;" width="20px" height="20px" src="./zh.png">
+						<span style="vertical-align: middle;">Language<i class="fa fa-down-dir"></i></span>
+					</div>
+					<ul style="margin-left:-150px;columns:2;-webkit-columns: 2;-moz-columns: 2;column-gap:0;">
+						<li><a href="https://js-audio-converter.com/ar/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -0px;"></i></span> العربية</a></li><li><a href="https://js-audio-converter.com/cs/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -24px;"></i></span> český</a></li><li><a href="https://js-audio-converter.com/de/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -48px;"></i></span> Deutsch</a></li><li><a href="https://js-audio-converter.com/dk/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -72px;"></i></span> Dansk</a></li><li><a href="https://js-audio-converter.com/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -96px;"></i></span> English</a></li><li><a href="https://js-audio-converter.com/fi/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -120px;"></i></span> Suomalainen</a></li><li><a href="https://js-audio-converter.com/fr/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -144px;"></i></span> Français</a></li><li><a href="https://js-audio-converter.com/hu/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -168px;"></i></span> Magyar</a></li><li><a href="https://js-audio-converter.com/it/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -192px;"></i></span> Italiano</a></li><li><a href="https://js-audio-converter.com/jp/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -216px;"></i></span> 日本の</a></li><li><a href="https://js-audio-converter.com/nl/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -240px;"></i></span> Nederlands</a></li><li><a href="https://js-audio-converter.com/no/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -264px;"></i></span> Norsk</a></li><li><a href="https://js-audio-converter.com/pl/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -288px;"></i></span> Polski</a></li><li><a href="https://js-audio-converter.com/pt/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -312px;"></i></span> Português</a></li><li><a href="https://js-audio-converter.com/ru/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -336px;"></i></span> Pусский</a></li><li><a href="https://js-audio-converter.com/se/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -360px;"></i></span> Svenska</a></li><li><a href="https://js-audio-converter.com/sp/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -384px;"></i></span> Español</a></li><li><a href="https://js-audio-converter.com/in/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -432px;"></i></span> हिन्दी</a></li><li><a href="https://js-audio-converter.com/id/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -456px;"></i></span> Indonesia</a></li><li><a href="https://js-audio-converter.com/pk/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -480px;"></i></span> اردو</a></li><li><a href="https://js-audio-converter.com/bd/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -504px;"></i></span> বাংলা ভাষার</a></li><li><a href="https://js-audio-converter.com/ph/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -528px;"></i></span> Pilipino</a></li><li><a href="https://js-audio-converter.com/vn/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -552px;"></i></span> Tiếng Việt</a></li><li><a href="https://js-audio-converter.com/tr/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -576px;"></i></span> Türkçe</a></li><li><a href="https://js-audio-converter.com/th/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -600px;"></i></span> ไทย</a></li><li><a href="https://js-audio-converter.com/kr/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -624px;"></i></span> 한국어</a></li><li><a href="https://js-audio-converter.com/tw/"><span><i class="langImg" style="width: 24px; height: 24px; background-position: 0px -648px;"></i></span> 繁體中文</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>		</div>
+	</div>
+</div>
+<div id="bbody">
+	<div id="bmain">
+		<script type="text/javascript">
+	var str_init = "初始化...|（如果是第一次使用，会比较缓慢，请耐心等待！）";
+	var str_readingFile = "正在读取文件...";
+	var str_pleaseLoadFile = "没有文件被选择，请先选择你要转化的文件。";
+	var str_clicktoSave = "点击保存";
+	var str_converSuccess = "转化完成！";
+	var str_convertFailed = "转化失败！";
+	var str_browserNotSupport = "你的浏览器不支持最新的HTML5技术，请使用新版本的浏览器。";
+</script>
+<!------------------------------------->
+<div class="brow">
+	<div class="bcontent bcenter">
+		<div class="h1title">
+			<h1><i class="fa fa-music"></i> 在线浏览器音频转换器</h1>
+			<div class="subtitle"> -- <b>急速在线音频转换器</b></div>
+		</div>
+	</div>
+</div>
+<div class="brow">
+	<div class="bcontent">
+		<div>
+		
+		免费 在线 音频工具。在浏览器转换格式MP4 MP3 WAV AAC OGG。 <br>
+		<!-- <i class="fa fa-docs"></i> 	</div> -->
+	</div>
+</div>
+<div class="brow">
+	<div class="bcontent">
+		<div style="margin:0;padding:0;white-space:nowrap;">
+			<!-- <label class="linkmenu linkmenu_first"><a href="https://voice-recorder-online.com/zh" target="_blank" title="在线录音机">录音机</a></label>
+			<label class="linkmenu"><a href="https://www.bearaudiotool.com/zh" target="_blank" title="MP3剪切在线">mp3切割器</a></label>		
+			<label class="linkmenu"><a href="https://js-video-converter.com/zh" target="_blank" title="在浏览器中转换视频文件">视频转换器</a></label>		
+			<label class="linkmenu"><a href="https://png2icojs.com/zh" target="_blank" title="png转ico在线">png转ico</a></label>		
+			<label class="linkmenu"><a href="https://m4atomp3.net/zh" target="_blank" title="m4a转mp3在线">m4a转mp3</a></label>		
+			<label class="linkmenu"><a href="https://jpg2pdfjs.com/zh" target="_blank" title="在浏览器中将jpg转换为pdf">jpg转pdf</a></label>		
+			<label class="linkmenu"><a href="https://pdf2jpgjs.com/zh" target="_blank" title="在浏览器中将pdf转换为jpg">pdf转jpg</a></label>		
+			<label class="linkmenu"><a href="https://webp2jpgjs.com//zh" target="_blank" title="webp在线转换为jpg">WebP转JPG</a></label>		
+			<label class="linkmenu"><a href="https://video-cutter-js.com/zh" target="_blank" title="视频剪切在线">视频剪切</a></label>		 -->
+			<label class="linkmenu"><a >视频转MP3</a></label>	
+		</div>
+		<div id="convert_work">
+			<div id="setp1">
+				<div class="bcol-2">
+					<div class="stepno">1</div>
+				</div>
+				<div class="bcol-10">
+					<div class="loadfile">
+						<div id="filedropzone" class="dragdoparea" style="">
+							<input type="file" id="bfile" name="myfile" accept=".*">
+							<p>拖动文件到这里（目前只支持单个文件转换）</p>
+						</div>
+					</div>
+					<div>
+						<div id="curFileInput">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="setp2">
+				<div class="bcol-2">
+					<div class="stepno">2</div>
+				</div>
+				<div class="bcol-10">
+					<div class="brow">
+						<div class="bcontent">
+							设置输出文件参数 （如果不懂可以采用默认配置，跳过此步）						</div>
+					</div>
+					<div class="optionarea">		
+						<form id="frmoptions">
+							<div class="brow">
+								<div class="optionitem">
+									<span class="optionlabel">输出文件格式:</span> 
+									<!--<select class="optioninput" id="format">	
+										<option value='MP3' select='selected'>MP3</option><option value='WAV'>WAV</option><option value='OGG'>OGG</option><option value='AAC'>AAC</option><option value='M4A'>M4A</option><option value='M4R'>M4R</option><option value='FLAC'>FLAC</option><option value='WMA'>WMA</option><option value='OPUS'>OPUS</option><option value='AIFF'>AIFF</option><option value='MMF'>MMF</option>									</select>
+									-->
+									<div class="optioninput">	
+										<label class="container">MP3<input type="radio" checked="checked" name="format" value="MP3" onclick="btnFormat_Click();"><span class="checkmark"></span></label><label class="container">WAV<input type="radio" name="format" value="WAV" onclick="btnFormat_Click();"><span class="checkmark"></span></label><label class="container">OGG<input type="radio" name="format" value="OGG" onclick="btnFormat_Click();"><span class="checkmark"></span></label><label class="container">AAC<input type="radio" name="format" value="AAC" onclick="btnFormat_Click();"><span class="checkmark"></span></label><label class="container">M4A<input type="radio" name="format" value="M4A" onclick="btnFormat_Click();"><span class="checkmark"></span></label><label class="container">M4R<input type="radio" name="format" value="M4R" onclick="btnFormat_Click();"><span class="checkmark"></span></label><label class="container">FLAC<input type="radio" name="format" value="FLAC" onclick="btnFormat_Click();"><span class="checkmark"></span></label><label class="container">WMA<input type="radio" name="format" value="WMA" onclick="btnFormat_Click();"><span class="checkmark"></span></label><label class="container">OPUS<input type="radio" name="format" value="OPUS" onclick="btnFormat_Click();"><span class="checkmark"></span></label><label class="container">AIFF<input type="radio" name="format" value="AIFF" onclick="btnFormat_Click();"><span class="checkmark"></span></label><label class="container">MMF<input type="radio" name="format" value="MMF" onclick="btnFormat_Click();"><span class="checkmark"></span></label>									</div>
+								</div>
+							</div>
+							<div class="brow">
+								<div class="optionitem">
+									<span class="optionlabel">编码器:</span> 
+									<select class="optioninput" id="encoder">	
+										<option value="" select="selected">libmp3lame</option>
+									</select>
+								</div>
+							</div>
+							<div class="brow">
+								<div class="optionitem">
+									<span class="optionlabel">质量:</span> 
+									<select class="optioninput" id="abitrate">	
+										<option value="48k">48k</option>
+										<option value="64k">64k</option>
+										<option value="80k">80k</option>
+										<option value="96k">96k</option>
+										<option value="128k" selected="selected">128k</option>
+										<option value="160k">160k</option>
+										<option value="256k">256k</option>
+									</select>
+								</div>
+							</div>
+							<div class="brow">
+								<div class="optionitem">
+									<span class="optionlabel">采样率:</span>
+									<select class="optioninput" id="asample">
+										<option value="8000">8000</option>
+										<option value="11025">11025</option>
+										<option value="12000">12000</option>
+										<option value="16000">16000</option>
+										<option value="22050">22050</option>
+										<option value="24000">24000</option>
+										<option value="32000">32000</option>
+										<option value="44100" selected="selected">44100</option>
+										<option value="48000">48000</option>
+									</select>
+								</div>
+							</div>
+							<div class="brow">
+								<div class="optionitem">
+									<span class="optionlabel">通道:</span>
+									<select class="optioninput" id="achannels">
+										<option value="1">Mono</option>
+										<option value="2" selected="selected">Stereo</option>
+									</select>
+								</div>
+							</div>
+						</form> 
+					</div>
+				</div>
+			</div>
+			<div id="setp3">
+				<div class="bcol-2">
+					<div class="stepno">3</div>
+				</div>
+				<div class="bcol-10">
+					<div class="bcontent">
+						<div id="convertBtn" class="bbutton">转换<i class="fa fa-cw"></i></div>
+						<!-- <div class="bbutton"></div> -->
+						<div id="outputArea"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="brow">
+	<div class="bcontent">
+		<i class="fa fa-help"></i> 使用本工具转换音频文件共有三个步骤。		<ul>
+			<li>第一步，选择文件，你可以点击按钮打开文件对话框。也可以把文件夹中的文件拖入。</li>
+			<li>第二步，设置你要输出文件的格式，并且设置输出文件的参数，比如采样率，音频质量，通道数等参数。</li>
+			<li>第三步，点击转换按钮，等待转换完成。然后保存转换后的文件到电脑。</li>
+		</ul>
+	</div>
+</div>
+<!-- <div class="brow">
+	<div class="bcontent">
+		<div><i class="fa fa-docs"></i> 文件格式转换列表如下:</div>
+		<div class="toollist">
+			<div class="listitem"><i class="fa fa-ok"></i>MP3 转 WAV</div><div class="listitem"><i class="fa fa-ok"></i>WAV 转 MP3</div><div class="listitem"><i class="fa fa-ok"></i>MP3 转 OGG</div><div class="listitem"><i class="fa fa-ok"></i>OGG 转 MP3</div><div class="listitem"><i class="fa fa-ok"></i>MP3 转 AAC</div><div class="listitem"><i class="fa fa-ok"></i>AAC 转 MP3</div><div class="listitem"><i class="fa fa-ok"></i>MP3 转 M4A</div><div class="listitem"><i class="fa fa-ok"></i>M4A 转 MP3</div><div class="listitem"><i class="fa fa-ok"></i>MP3 转 M4R</div><div class="listitem"><i class="fa fa-ok"></i>M4R 转 MP3</div><div class="listitem"><i class="fa fa-ok"></i>MP3 转 FLAC</div><div class="listitem"><i class="fa fa-ok"></i>FLAC 转 MP3</div><div class="listitem"><i class="fa fa-ok"></i>MP3 转 WMA</div><div class="listitem"><i class="fa fa-ok"></i>WMA 转 MP3</div><div class="listitem"><i class="fa fa-ok"></i>MP3 转 OPUS</div><div class="listitem"><i class="fa fa-ok"></i>OPUS 转 MP3</div><div class="listitem"><i class="fa fa-ok"></i>MP3 转 AIFF</div><div class="listitem"><i class="fa fa-ok"></i>AIFF 转 MP3</div><div class="listitem"><i class="fa fa-ok"></i>MP3 转 MMF</div><div class="listitem"><i class="fa fa-ok"></i>MMF 转 MP3</div><div class="listitem"><i class="fa fa-ok"></i>WAV 转 OGG</div><div class="listitem"><i class="fa fa-ok"></i>OGG 转 WAV</div><div class="listitem"><i class="fa fa-ok"></i>WAV 转 AAC</div><div class="listitem"><i class="fa fa-ok"></i>AAC 转 WAV</div><div class="listitem"><i class="fa fa-ok"></i>WAV 转 M4A</div><div class="listitem"><i class="fa fa-ok"></i>M4A 转 WAV</div><div class="listitem"><i class="fa fa-ok"></i>WAV 转 M4R</div><div class="listitem"><i class="fa fa-ok"></i>M4R 转 WAV</div><div class="listitem"><i class="fa fa-ok"></i>WAV 转 FLAC</div><div class="listitem"><i class="fa fa-ok"></i>FLAC 转 WAV</div><div class="listitem"><i class="fa fa-ok"></i>WAV 转 WMA</div><div class="listitem"><i class="fa fa-ok"></i>WMA 转 WAV</div><div class="listitem"><i class="fa fa-ok"></i>WAV 转 OPUS</div><div class="listitem"><i class="fa fa-ok"></i>OPUS 转 WAV</div><div class="listitem"><i class="fa fa-ok"></i>WAV 转 AIFF</div><div class="listitem"><i class="fa fa-ok"></i>AIFF 转 WAV</div><div class="listitem"><i class="fa fa-ok"></i>WAV 转 MMF</div><div class="listitem"><i class="fa fa-ok"></i>MMF 转 WAV</div><div class="listitem"><i class="fa fa-ok"></i>OGG 转 AAC</div><div class="listitem"><i class="fa fa-ok"></i>AAC 转 OGG</div><div class="listitem"><i class="fa fa-ok"></i>OGG 转 M4A</div><div class="listitem"><i class="fa fa-ok"></i>M4A 转 OGG</div><div class="listitem"><i class="fa fa-ok"></i>OGG 转 M4R</div><div class="listitem"><i class="fa fa-ok"></i>M4R 转 OGG</div><div class="listitem"><i class="fa fa-ok"></i>OGG 转 FLAC</div><div class="listitem"><i class="fa fa-ok"></i>FLAC 转 OGG</div><div class="listitem"><i class="fa fa-ok"></i>OGG 转 WMA</div><div class="listitem"><i class="fa fa-ok"></i>WMA 转 OGG</div><div class="listitem"><i class="fa fa-ok"></i>OGG 转 OPUS</div><div class="listitem"><i class="fa fa-ok"></i>OPUS 转 OGG</div><div class="listitem"><i class="fa fa-ok"></i>OGG 转 AIFF</div><div class="listitem"><i class="fa fa-ok"></i>AIFF 转 OGG</div><div class="listitem"><i class="fa fa-ok"></i>OGG 转 MMF</div><div class="listitem"><i class="fa fa-ok"></i>MMF 转 OGG</div><div class="listitem"><i class="fa fa-ok"></i>AAC 转 M4A</div><div class="listitem"><i class="fa fa-ok"></i>M4A 转 AAC</div><div class="listitem"><i class="fa fa-ok"></i>AAC 转 M4R</div><div class="listitem"><i class="fa fa-ok"></i>M4R 转 AAC</div><div class="listitem"><i class="fa fa-ok"></i>AAC 转 FLAC</div><div class="listitem"><i class="fa fa-ok"></i>FLAC 转 AAC</div><div class="listitem"><i class="fa fa-ok"></i>AAC 转 WMA</div><div class="listitem"><i class="fa fa-ok"></i>WMA 转 AAC</div><div class="listitem"><i class="fa fa-ok"></i>AAC 转 OPUS</div><div class="listitem"><i class="fa fa-ok"></i>OPUS 转 AAC</div><div class="listitem"><i class="fa fa-ok"></i>AAC 转 AIFF</div><div class="listitem"><i class="fa fa-ok"></i>AIFF 转 AAC</div><div class="listitem"><i class="fa fa-ok"></i>AAC 转 MMF</div><div class="listitem"><i class="fa fa-ok"></i>MMF 转 AAC</div><div class="listitem"><i class="fa fa-ok"></i>M4A 转 M4R</div><div class="listitem"><i class="fa fa-ok"></i>M4R 转 M4A</div><div class="listitem"><i class="fa fa-ok"></i>M4A 转 FLAC</div><div class="listitem"><i class="fa fa-ok"></i>FLAC 转 M4A</div><div class="listitem"><i class="fa fa-ok"></i>M4A 转 WMA</div><div class="listitem"><i class="fa fa-ok"></i>WMA 转 M4A</div><div class="listitem"><i class="fa fa-ok"></i>M4A 转 OPUS</div><div class="listitem"><i class="fa fa-ok"></i>OPUS 转 M4A</div><div class="listitem"><i class="fa fa-ok"></i>M4A 转 AIFF</div><div class="listitem"><i class="fa fa-ok"></i>AIFF 转 M4A</div><div class="listitem"><i class="fa fa-ok"></i>M4A 转 MMF</div><div class="listitem"><i class="fa fa-ok"></i>MMF 转 M4A</div><div class="listitem"><i class="fa fa-ok"></i>M4R 转 FLAC</div><div class="listitem"><i class="fa fa-ok"></i>FLAC 转 M4R</div><div class="listitem"><i class="fa fa-ok"></i>M4R 转 WMA</div><div class="listitem"><i class="fa fa-ok"></i>WMA 转 M4R</div><div class="listitem"><i class="fa fa-ok"></i>M4R 转 OPUS</div><div class="listitem"><i class="fa fa-ok"></i>OPUS 转 M4R</div><div class="listitem"><i class="fa fa-ok"></i>M4R 转 AIFF</div><div class="listitem"><i class="fa fa-ok"></i>AIFF 转 M4R</div><div class="listitem"><i class="fa fa-ok"></i>M4R 转 MMF</div><div class="listitem"><i class="fa fa-ok"></i>MMF 转 M4R</div><div class="listitem"><i class="fa fa-ok"></i>FLAC 转 WMA</div><div class="listitem"><i class="fa fa-ok"></i>WMA 转 FLAC</div><div class="listitem"><i class="fa fa-ok"></i>FLAC 转 OPUS</div><div class="listitem"><i class="fa fa-ok"></i>OPUS 转 FLAC</div><div class="listitem"><i class="fa fa-ok"></i>FLAC 转 AIFF</div><div class="listitem"><i class="fa fa-ok"></i>AIFF 转 FLAC</div><div class="listitem"><i class="fa fa-ok"></i>FLAC 转 MMF</div><div class="listitem"><i class="fa fa-ok"></i>MMF 转 FLAC</div><div class="listitem"><i class="fa fa-ok"></i>WMA 转 OPUS</div><div class="listitem"><i class="fa fa-ok"></i>OPUS 转 WMA</div><div class="listitem"><i class="fa fa-ok"></i>WMA 转 AIFF</div><div class="listitem"><i class="fa fa-ok"></i>AIFF 转 WMA</div><div class="listitem"><i class="fa fa-ok"></i>WMA 转 MMF</div><div class="listitem"><i class="fa fa-ok"></i>MMF 转 WMA</div><div class="listitem"><i class="fa fa-ok"></i>OPUS 转 AIFF</div><div class="listitem"><i class="fa fa-ok"></i>AIFF 转 OPUS</div><div class="listitem"><i class="fa fa-ok"></i>OPUS 转 MMF</div><div class="listitem"><i class="fa fa-ok"></i>MMF 转 OPUS</div><div class="listitem"><i class="fa fa-ok"></i>AIFF 转 MMF</div><div class="listitem"><i class="fa fa-ok"></i>MMF 转 AIFF</div>		</div>
+	</div>
+</div> -->
+<!-- <div class="brow exad">
+	<div class="bcontent">
+		<div class="bcol-4">
+			<div class="bcontent bcenter">
+				<i class="fa fa-chrome fa-1x " aria-hidden="true"></i>&nbsp;<b>免费WEB工具</b><br><span>完全免费。不需要下载任何软件或插件，也不需要Flash插件。打开浏览器就可以使用。</span>			</div>
+		</div>
+		<div class="bcol-4">
+			<div class="bcontent bcenter">
+				<i class="fa fa-html5 fa-1x " aria-hidden="true"></i>&nbsp;<b>HTML5和FFMPEG.JS</b><br><span>采用HTML5音频技术，不需要上传音频文件到服务器。采用FFMPEG.JS技术，直接在浏览器里转换文件。所以你的文件不会离开你的电脑。</span>			</div>
+		</div>
+		<div class="bcol-4">
+			<div class="bcontent bcenter">
+				<i class="fa fa-paper-plane-empty fa-1x " aria-hidden="true"></i>&nbsp;<b>简单但强大</b><br><span>简单的WEB界面。没有专业技术人员的帮忙你也可以完成操作。没有多余的配置。也不需要额外的专业知识。</span>			</div>
+		</div>
+	</div>
+</div> -->
+<script type="text/javascript" src="./bconverter.min.js"></script>
+	</div>
+</div>
+<div id="bfooter">
+	<div class="brow">
+		<div class="bcontent bcenter bshare">
+	
+	</div>
+	<div class="brow">
+		<div class="bcontent bcenter">
+		
+		</div>
+	</div>
+</div>
+<!-------------cookie alert----------->
+<style>
+.cookie-alert{
+    background-color:rgba(24,24,24,0.8);
+    color:#e2e2ea;
+    font-size:12px;
+    min-height:48px;
+    padding:18px;
+    position:fixed;
+    left:0;
+    right:0;
+    z-index:1021
+}
+.cookie-alert a{
+    color:#fff;
+    font-weight:bold
+}
+.cookie-alert-fixed-bottom{
+    bottom:0
+}
+.cookie-alert-close{
+    font-size:30px;
+    position:absolute;
+    right:9px;
+    top:9px
+}
+.cookie-alert-close-button{
+    background-color:transparent;
+    border:transparent;
+    padding:0
+}
+.cookie-alert-body{
+    padding-right:24px
+}
+.cookie-alert a {
+    color: #fff;
+    font-weight: bold;
+}
+.cookie-alert-hide {
+    display: none!important;
+}
+pre {
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+pre a {
+    color: blue !important;
+    text-decoration: underline !important;
+}
+</style>
+<!-- <div class="cookie-alert cookie-alert-fixed-bottom cookie-policy-banner">
+	<div class="cookie-alert-close">
+		<button type="button" class="cookie-alert-close-button js-close" aria-label="Close"><span aria-hidden="true" style="font-size:30px;cursor: pointer;">×</span></button>
+	</div> -->
+	<!-- <div class="cookie-alert-body">
+	</div> -->
+<!-- </div> -->
+<script type="text/javascript">
+	function cookie_setCookie(name,value){
+		var Days=365;
+		var date=new Date(); 
+		date.setTime(date.getTime()+Days*24*60*60*1000);
+		document.cookie=name+"="+escape(value)+";expires="+date.toGMTString();
+	}
+
+	function cookie_getCookie(name){
+		var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+		if(arr=document.cookie.match(reg)){
+			return unescape(arr[2]);
+		}
+		else{
+			return null;
+		}
+	}
+	function CookiedAlert() 
+	{
+		var arr = document.getElementsByClassName('cookie-policy-banner');
+		var cookieme = arr[0];
+		arr = document.getElementsByClassName('js-close'); 
+		var closebutton = arr[0];
+		var cookieKey = "com";
+		hasBeenDismissed = cookie_getCookie(cookieKey) === '1';
+		if (!hasBeenDismissed) {
+			cookieme.classList.remove('cookie-alert-hide');
+			closebutton.onclick = function() {
+				cookieme.style.display = 'none';
+				cookie_setCookie(cookieKey, '1');
+			}
+		}
+	}
+	//CookiedAlert();
+</script>
+<!------------------------------------->
+
+
+
+</body></html>
